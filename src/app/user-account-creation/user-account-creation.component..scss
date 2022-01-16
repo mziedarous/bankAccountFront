@@ -1,0 +1,192 @@
+:host {
+
+
+  .site-label {
+    width: 650px;
+    padding-left: 3px;
+    padding-top: 28px;
+    font-family: SFR;
+    font-size: 18px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.83;
+    letter-spacing: normal;
+    color: forestgreen;
+  }
+
+  .site-label-red {
+    width: 650px;
+    padding-left: 3px;
+    padding-top: 28px;
+    font-family: SFR;
+    font-size: 18px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.83;
+    letter-spacing: normal;
+    color: red;
+  }
+
+  .pos {
+    margin-left: 20px;
+    margin-top: 70px;
+  }
+
+  .box {
+    width: 99%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .credit{
+    color: red;
+    font-weight: bold;
+  }
+  .debit{
+    color: green;
+    font-weight: bold;
+  }
+  .box2 {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .btn-pos {
+    margin-left: 5px;
+  }
+
+  .row-pos{
+    margin-left: 55px;
+  }
+  .amount-pos{
+    margin-top: 20px;
+  }
+  .panel-model {
+    height: 333px;
+    width: 508px;
+    background-color: #fff;
+    margin-top: 30px;
+    margin-left: 70px;
+    border: 2px solid #e9e9e9;
+
+  }
+  .panel-model2 {
+    height: 190px;
+    width: 508px;
+    background-color: #fff;
+    margin-top: 30px;
+    margin-left: 70px;
+    border: 2px solid #e9e9e9;
+
+  }
+  .col2{
+    border: 2px solid #e9e9e9;
+    margin-top: 22px;
+  }
+  .title1 {
+    padding-left: 115px !important;
+    border-bottom: 2px solid #e9e9e9;
+    width: 504px;
+    height: 65px;
+    padding-left: 3px;
+    padding-top: 28px;
+    font-family: system-ui;
+    font-size: 18px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: .83;
+    letter-spacing: normal;
+  }
+  .title2 {
+    //padding-left: 115px !important;
+    border-bottom: 2px solid #e9e9e9;
+    width: 504px;
+    height: 65px;
+    padding-left: 3px;
+    padding-top: 28px;
+    font-family: system-ui;
+    font-size: 18px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: .83;
+    letter-spacing: normal;
+  }
+
+  .panel-labels-pos {
+    padding-top: 18px;
+    padding-left: 19px;
+  }
+  ::ng-deep{
+    .btn{
+      border-radius: 0px;
+      font-size: 15px;
+      font-family: monospace;
+    }
+  }
+
+  .label-style {
+    font-family: system-ui;
+  }
+
+  .label-total-style {
+    font-family: system-ui;
+    font-weight: 900;
+
+  }
+  .sylelabel-blod {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+  }
+  .radio-style{
+    margin-left: 10px;
+    font-weight: 900;
+
+  }
+  .amount-size{
+    width: 40%;
+  }
+
+  .red-msg3 {
+    margin: 0px 4px 16px 86px;
+    padding-top: 11px;
+    padding-bottom: 10px;
+    /* background-color: #DB635F; */
+    font-family: SFR;
+    font-size: 13px;
+    border: solid 1px #DB635F;
+    background-color: #ffe5e8;
+    font-weight: 400;
+    border-radius: 5px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #d3120c;
+    text-align: center;
+    width: 509px;
+    box-shadow: 0 10px 15px 0 #6559832c;
+  }
+
+
+  .red-msg{
+    padding-top: 11px;
+    width: 183px;
+    height: 28px;
+    font-family: system-ui;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: var(--black);
+    text-align: center;
+    color: #df0000;
+  }
+}

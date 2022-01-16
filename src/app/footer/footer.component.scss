@@ -1,0 +1,36 @@
+:host {
+
+  .link-style {
+
+    color: black;
+    font-family: system-ui;
+    font-size: large;
+    font-weight: 600;
+
+  }
+
+  a:hover {
+    color: #fa2222;
+  }
+
+  .link1 {
+    border-left: 3px solid #e9e9e9;
+    border-right: 3px solid #e9e9e9;
+  }
+
+  .link2 {
+    border-right: 3px solid #e9e9e9;
+  }
+
+  .footer {
+    border-color: #e7e7e71a;
+    background-color: #e7e7e71a;
+  }
+
+  .copy {
+    margin-left: 920px;
+    font-family: system-ui;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+}

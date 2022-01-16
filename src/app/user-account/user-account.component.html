@@ -1,0 +1,160 @@
+<div class="pos">
+  <form [formGroup]="accountForm" id="accountForm">
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-xs-12">
+
+            <div class="row row-pos" >
+              <div class="col-sm-9  form-group">
+                <label for="account">Your account:</label>
+                <div class="box">
+                  <input
+                    id="account"
+                    class="form-control"
+                    formControlName="account"
+                    [(ngModel)]="accountId"
+                    maxlength="10"
+                    (keypress)="numberOnly($event)"
+                    pInputText required
+                  >
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-pos"
+                    [disabled]="!accountId || userAccount?.compteReference"
+                    (click)="search()">Search
+                  </button>
+                  <button class="btn btn-info btn-pos "
+                          [disabled]="!accountId"
+                          (click)="refresh($event)"
+                          style="margin-left: 10px;"
+                  ><span class="glyphicon glyphicon-refresh"></span>
+
+                  </button>
+
+                </div>
+              </div>
+            </div>
+            <span class="red-msg" *ngIf="isFuncError||isFindRefError">{{this.error}}</span>
+
+            <div class="row panel-model" *ngIf="userAccount">
+              <div class="title1">
+                <span>Compte information</span>
+              </div>
+              <div class="panel-labels-pos">
+
+                <div class="form-group">
+                  <label class="label-style">Compte reference:</label>
+                  {{userAccount.compteReference}}
+                </div>
+
+                <div class="form-group">
+                  <label class="label-style">First Name:</label>
+                  {{userAccount.firstName}}
+                </div>
+                <div class="form-group">
+                  <label class="label-style">Last Name:</label>
+                  {{userAccount.lastName}}
+                </div>
+                <div class=" form-group">
+                  <label class="label-style">Address:</label>
+                  {{userAccount.address}}
+                </div>
+                <div class=" form-group">
+                  <label >Account state:</label>
+                  <span class="label-style">  {{userAccount.amount>0?'Creditor':'Debtor' }} </span>
+                </div>
+                <div class=" form-group">
+                  <label >Total amount:</label>
+                  <span class="label-total-style" [ngClass]="{'credit': (userAccount.amount   < 0) , 'debit':(userAccount.amount  >= 0) }">  {{userAccount.amount }} Euro </span>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class=" panel-model2" *ngIf="userAccount">
+              <div class="title1">
+                <span>Compte operation</span>
+              </div>
+              <div class="panel-labels-pos">
+                <div class="">
+
+                  <div class="sylelabel-blod">
+                    <input type="radio" [(ngModel)]="selectedMode" formControlName="mode"
+                           (click)=onModeSelection()
+
+                           name="mode" [value]="'Debit'"><span class="radio-style">Deposit</span><br>
+                    <input style="margin-left: 10px" type="radio" [(ngModel)]="selectedMode"
+                           formControlName="mode"
+                           (click)=onModeSelection()
+
+                           name="mode" [value]="'Credit'"><span class="radio-style">Withdrawal</span>
+                  </div>
+                </div>
+
+                <div class="box2 amount-pos">
+                  <input
+                    id="amount"
+                    class="form-control amount-size"
+                    formControlName="amount"
+                    [(ngModel)]="amountValue"
+                    maxlength="12"
+                    (keypress)="numberOnly($event)"
+                    (keyup.enter)="save()"
+                    pInputText required
+                  >
+
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-pos"
+                    [disabled]="!amountValue || amountValue== 0"
+                    (click)="save()">Send
+                  </button>
+                </div>
+                <span class="red-msg2" *ngIf="isDebitOrCreditError">{{this.error}}</span>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-5 col2 table-style"*ngIf="userAccount">
+
+        <div class="title2">
+          <span>Your operation List</span>
+        </div>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Operation type</th>
+            <th scope="col">Date</th>
+            <th scope="col">Balance</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let operation of userAccount.operations; index as i">
+            <td>{{ operation.operationAct  }}</td>
+            <td>{{ operation.date | date:'MMMM d, y' }}</td>
+            <td [ngClass]="{'credit': (operation.balance < 0) , 'debit':(operation.balance >= 0) }">{{ operation.balance }} EURO</td>
+
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,101 @@
+<div class="pos">
+  <form [formGroup]="userForm" id="accountForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+
+      <div class="col-md-5">
+        <div class="row">
+          <div class="red-msg3" *ngIf="isSaveError">
+          <span >{{this.error}}!</span>
+          </div>
+          <div class="col-xs-12" style="margin-bottom: 25px;">
+
+            <div class="row row-pos">
+              <div class="col-sm-9  form-group">
+                <label for="firstname">First Name:</label>
+                <div class="box">
+                  <input
+                    id="firstname"
+                    class="form-control"
+                    formControlName="firstname"
+                    [(ngModel)]="firstname"
+                    maxlength="10"
+                      pInputText required
+                  >
+                </div>
+                <span class="red-msg" *ngIf="userForm.get('firstname').invalid && userForm.get('firstname').touched"> First name not valid</span>
+
+              </div>
+              <div class="col-sm-9  form-group">
+                <label for="lastname">Last Name:</label>
+                <div class="box">
+                  <input
+                    id="lastname"
+                    class="form-control"
+                    formControlName="lastname"
+                    [(ngModel)]="lastname"
+                    maxlength="38"
+                    pInputText required
+                  >
+                </div>
+                <span class="red-msg" *ngIf="userForm.get('lastname').invalid && userForm.get('lastname').touched"> Last name not valid</span>
+
+              </div>
+              <div class="col-sm-9  form-group">
+                <label for="address">Address:</label>
+                <div class="box">
+                  <input
+                    id="address"
+                    class="form-control"
+                    formControlName="address"
+                    [(ngModel)]="address"
+                    maxlength="38"
+                    pInputText required
+                  >
+                </div>
+                <span class="red-msg" *ngIf="userForm.get('address').invalid && userForm.get('address').touched"> Address not valid</span>
+
+              </div>
+
+              <div class="col-sm-9  form-group">
+                <label for="amount">First amount deposite:</label>
+                <div class="box">
+                  <input
+                    id="amount"
+                    class="form-control"
+                    formControlName="amount"
+                    [(ngModel)]="amount"
+                    (keypress)="numberOnly($event)"
+
+                    maxlength="38"
+                    pInputText required
+                  >
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div style="    margin-left: 127px;">
+            <button
+              style="width: 200px"
+              type="button"
+                class="btn btn-dark"
+              (click)="onCancel()"
+            >CANCEL
+            </button>
+
+            <button
+              style="width: 200px;    margin-left: 19px;"
+              type="submit"
+              class="btn btn-danger "
+              [disabled]="!userForm.valid"
+            >Save
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
