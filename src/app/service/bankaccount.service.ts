@@ -86,7 +86,7 @@ export class BankaccountService {
 
 
   create(userAccount: UserAccountDTO): Observable<UserAccountDTO> {
-    const url = this.apiUrl + `/account/create`;
+    const url = this.apiUrl + `/account/useraccount`;
     const requestOptions = {
       headers: HttpUtils.apiDefaultHeaders,
       params: new HttpParams()
